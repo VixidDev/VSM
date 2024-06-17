@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${modid}",
+    "name": "Vixid's Skyblock Mod",
+    "description": "A mod that is used as an example.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "None",
+    "updateUrl": "",
+    "authorList": [
+      "Vixid"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
