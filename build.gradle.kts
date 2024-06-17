@@ -137,6 +137,8 @@ val remapJar by tasks.named<net.fabricmc.loom.task.RemapJarTask>("remapJar") {
     archiveClassifier.set("")
     from(tasks.shadowJar)
     input.set(tasks.shadowJar.get().archiveFile)
+
+    archiveFileName.set("${project.name}-$mcVersion-${project.version}.jar")
 }
 
 tasks.jar {
