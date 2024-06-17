@@ -26,10 +26,11 @@ feature to not be worth implementing in one of the versions.
 
 <details>
 <summary>Spotify Display</summary>
-Works by reading the window title of the Spotify desktop client <br>
-- Shows the current song artist and title in game <br>
-- Can control the song using keybinds set in the config <br>
-- Posts a chat message whenever a song changes <br>
+    
+Works by reading the window title of the Spotify desktop client
+* Shows the current song artist and title in game
+* Can control the song using keybinds set in the config
+* Posts a chat message whenever a song changes
 > Currently uses powershell commands to query the window title so this will only work
 on Windows devices
 </details>
