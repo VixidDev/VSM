@@ -29,7 +29,7 @@ class PositionEditor(private val editorOverlays: Map<UUID, Pair<String, Position
         val width = textRenderer.getWidth(label.first) / 2
         val position = label.second
 
-        if (position.x != -1 && position.y != -1 && button == 0) {
+        if (position.x != -999 && position.y != -999 && button == 0) {
             position.set(mouseX.toInt() - width, mouseY.toInt() - textRenderer.fontHeight / 2)
         }
         return true
@@ -42,7 +42,7 @@ class PositionEditor(private val editorOverlays: Map<UUID, Pair<String, Position
             val bounds = RenderUtils.getRectangleBoundsForString(string, position)
             if (bounds.containsPosition(Position(mouseX, mouseY))) return overlay.value
         }
-        return Pair("", Position(-1, -1))
+        return Pair("", Position(-999, -999))
     }
 
     override fun close() {
