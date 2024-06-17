@@ -3,15 +3,14 @@
 	"id": "vsm",
 	"version": "${version}",
 	"name": "Vixid's Skyblock Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Vixid's Minecraft mod with various QOL features",
 	"authors": [
 		"Vixid"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/VixidDev"
+		"sources": "https://github.com/VixidDev/VSM"
 	},
-	"license": "CC0-1.0",
+	"license": "GPL-3.0",
 	"icon": "assets/vsm/icon.png",
 	"environment": "client",
 	"entrypoints": {
