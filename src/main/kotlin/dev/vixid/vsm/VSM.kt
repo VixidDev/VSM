@@ -6,6 +6,7 @@ import dev.vixid.vsm.config.ConfigManager
 import dev.vixid.vsm.config.VSMConfig
 import dev.vixid.vsm.features.SpotifyDisplay
 import dev.vixid.vsm.jnativehook.VSMLibraryLocator
+import dev.vixid.vsm.overlays.OverlayPositions
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -32,7 +33,9 @@ class VSM {
         ConfigManager.firstLoad()
 
         MinecraftForge.EVENT_BUS.register(this)
-        MinecraftForge.EVENT_BUS.register(SpotifyDisplay)
+
+        SpotifyDisplay.initialise()
+        OverlayPositions.initialise()
 
         System.setProperty("jnativehook.lib.locator", VSMLibraryLocator::class.java.canonicalName)
         GlobalScreen.registerNativeHook()

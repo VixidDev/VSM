@@ -3,28 +3,34 @@ package dev.vixid.vsm.features
 import dev.vixid.vsm.VSM
 import dev.vixid.vsm.config.features.SpotifyConfig
 import dev.vixid.vsm.events.KeyboardEvent
+import dev.vixid.vsm.overlays.Overlay
+import dev.vixid.vsm.overlays.OverlayPositions
 import dev.vixid.vsm.utils.ChatUtils
+import dev.vixid.vsm.utils.RenderUtils.drawTextWithShadow
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import kotlinx.coroutines.launch
 import net.minecraft.client.Minecraft
 import net.minecraftforge.client.event.MouseEvent
-import net.minecraftforge.client.event.RenderGameOverlayEvent
+import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 import net.minecraftforge.fml.common.gameevent.TickEvent
 
-object SpotifyDisplay {
+object SpotifyDisplay : Overlay() {
+
     private val config: SpotifyConfig get() = VSM.config.spotifyConfig
 
-    private var totalTicks = 0
     private var songName: String = "§cCannot detect song name!"
+    private var totalTicks = 0
 
-    @SubscribeEvent
-    fun render(event: RenderGameOverlayEvent.Post) {
-        if (event.type != RenderGameOverlayEvent.ElementType.ALL) return
-        if (!isEnabled()) return
+    fun initialise() {
+        OverlayPositions.addOverlay(this)
 
-        Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow("§f$songName", 10f, 10f, 0)
+        MinecraftForge.EVENT_BUS.register(this)
+    }
+
+    override fun renderOverlay() {
+        config.overlayPosition.drawTextWithShadow(songName)
     }
 
     @SubscribeEvent
