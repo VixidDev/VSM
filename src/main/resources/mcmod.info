@@ -2,11 +2,11 @@
   {
     "modid": "${modid}",
     "name": "Vixid's Skyblock Mod",
-    "description": "A mod that is used as an example.",
+    "description": "Vixid's Minecraft mod with various QOL features",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "None",
-    "updateUrl": "",
+    "url": "https://github.com/VixidDev/VSM",
+    "updateUrl": "https://github.com/VixidDev/VSM/releases",
     "authorList": [
       "Vixid"
     ],
