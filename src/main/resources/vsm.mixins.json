@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "dev.vixid.vsm.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"MixinKeyboard",
+      	"MixinMouse",
+		"MixinMinecraftClient"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
