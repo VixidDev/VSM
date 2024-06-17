@@ -1,5 +1,6 @@
 package dev.vixid.vsm.overlays
 
+import dev.vixid.vsm.VSM
 import dev.vixid.vsm.config.core.Position
 import dev.vixid.vsm.utils.RenderUtils
 import java.util.UUID
@@ -24,20 +25,28 @@ class PositionEditor(private val editorOverlays: Map<UUID, Pair<String, Position
     }
 
     override fun mouseDragged(mouseX: Double, mouseY: Double, button: Int, deltaX: Double, deltaY: Double): Boolean {
-        val position = mouseIsOverAnOverlay(mouseX, mouseY)
+        val label = getHoveredOverlayData(mouseX, mouseY)
+        val width = textRenderer.getWidth(label.first) / 2
+        val position = label.second
+
         if (position.x != -1 && position.y != -1 && button == 0) {
-            position.add(deltaX.toInt(), deltaY.toInt())
+            position.set(mouseX.toInt() - width, mouseY.toInt() - textRenderer.fontHeight / 2)
         }
         return true
     }
 
-    private fun mouseIsOverAnOverlay(mouseX: Double, mouseY: Double) : Position {
+    private fun getHoveredOverlayData(mouseX: Double, mouseY: Double) : Pair<String, Position> {
         for (overlay in editorOverlays) {
             val string = overlay.value.first
             val position = overlay.value.second
             val bounds = RenderUtils.getRectangleBoundsForString(string, position)
-            if (bounds.containsPosition(Position(mouseX, mouseY))) return overlay.value.second
+            if (bounds.containsPosition(Position(mouseX, mouseY))) return overlay.value
         }
-        return Position(-1, -1)
+        return Pair("", Position(-1, -1))
+    }
+
+    override fun close() {
+        super.close()
+        VSM.config.instance.saveNow()
     }
 }

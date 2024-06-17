@@ -32,6 +32,11 @@ public class Position {
         this.y += y;
     }
 
+    public void set(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public UUID getUuid() {
         if (this.uuid == null) {
             this.uuid = UUID.randomUUID();

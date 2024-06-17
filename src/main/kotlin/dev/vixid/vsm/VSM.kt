@@ -13,10 +13,11 @@ import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 object VSM {
-    private val logger = LoggerFactory.getLogger("vsm")
+    val logger: Logger = LoggerFactory.getLogger("vsm")
 
 	val config = ManagedConfig.create(File("config/vsm/config.json"), VSMConfig::class.java) {
 		// Overwrite the GsonMapper to our own, so we can exclude fields without Expose annotation

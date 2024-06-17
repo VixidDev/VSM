@@ -3,7 +3,6 @@ package dev.vixid.vsm.config;
 import com.google.gson.annotations.Expose;
 import com.mojang.brigadier.CommandDispatcher;
 import dev.vixid.vsm.VSM;
-import dev.vixid.vsm.utils.ChatUtils;
 import io.github.notenoughupdates.moulconfig.Config;
 import io.github.notenoughupdates.moulconfig.Social;
 import io.github.notenoughupdates.moulconfig.annotations.Category;
@@ -49,7 +48,7 @@ public class VSMConfig extends Config {
 
     @Override
     public void saveNow() {
-        ChatUtils.INSTANCE.chat("Saved config");
+        VSM.INSTANCE.getLogger().debug("Saved config");
         super.saveNow();
     }
 
