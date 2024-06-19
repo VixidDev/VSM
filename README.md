@@ -22,6 +22,13 @@ Currently, there exists a 1.8.9 Forge version and a 1.20.6 Fabric version. The s
 features should exist in both version unless some limitation arises that causes a
 feature to not be worth implementing in one of the versions.
 
+## Requirements
+
+Requires the following libraries to work (only for the Fabric 1.20.6 version):
+
+- [Fabric API](https://modrinth.com/mod/fabric-api)
+- [Fabric Language Kotlin](https://github.com/FabricMC/fabric-language-kotlin/releases/)
+
 ## Features
 
 <details>
