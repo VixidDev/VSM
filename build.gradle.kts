@@ -43,6 +43,8 @@ dependencies {
 	modApi("net.fabricmc.fabric-api:fabric-api:${rootProject.property("fabric_version")}")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
+	modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.2.1")
+
 	modImplementation("org.notenoughupdates.moulconfig:modern:3.0.0-beta.11")
 	include("org.notenoughupdates.moulconfig:modern:3.0.0-beta.11")
 
