@@ -30,6 +30,7 @@ object SpotifyDisplay : Overlay() {
     }
 
     override fun renderOverlay() {
+        if (!isEnabled()) return
         config.overlayPosition.drawTextWithShadow(songName)
     }
 
