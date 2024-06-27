@@ -10,6 +10,9 @@ import net.minecraft.text.Text
 
 class PositionEditor(private val editorOverlays: Map<UUID, Pair<String, Position>>) : Screen(Text.literal("Position Editor")) {
 
+    private var isDraggingOverlay = false
+    private var draggedOverlayData: Pair<String, Position> = Pair("", Position(-999, -999))
+
     override fun render(context: DrawContext, mouseX: Int, mouseY: Int, delta: Float) {
         this.renderDarkening(context)
 
@@ -24,14 +27,31 @@ class PositionEditor(private val editorOverlays: Map<UUID, Pair<String, Position
         }
     }
 
-    override fun mouseDragged(mouseX: Double, mouseY: Double, button: Int, deltaX: Double, deltaY: Double): Boolean {
+    override fun mouseClicked(mouseX: Double, mouseY: Double, button: Int): Boolean {
         val label = getHoveredOverlayData(mouseX, mouseY)
-        val width = textRenderer.getWidth(label.first) / 2
         val position = label.second
 
         if (position.x != -999 && position.y != -999 && button == 0) {
-            position.set(mouseX.toInt() - width, mouseY.toInt() - textRenderer.fontHeight / 2)
+            isDraggingOverlay = true
+            draggedOverlayData = label
         }
+        return true
+    }
+
+    override fun mouseDragged(mouseX: Double, mouseY: Double, button: Int, deltaX: Double, deltaY: Double): Boolean {
+        val halfWidth = textRenderer.getWidth(draggedOverlayData.first) / 2
+        val halfHeight = textRenderer.fontHeight / 2
+        val position = draggedOverlayData.second
+
+        if (isDraggingOverlay && position.x != -999 && position.y != -999 && button == 0) {
+            position.set(mouseX.toInt() - halfWidth, mouseY.toInt() - halfHeight)
+        }
+        return true
+    }
+
+    override fun mouseReleased(mouseX: Double, mouseY: Double, button: Int): Boolean {
+        isDraggingOverlay = false
+        draggedOverlayData = Pair("", Position(-999, -999))
         return true
     }
 
