@@ -10,7 +10,7 @@
     </a>
 </div>
 
-VSM is a personal Minecraft mod of mine with the purpose of adding QOL features that I
+VSM is a personal Skyblock[^1] Minecraft mod of mine with the purpose of adding QOL features that I
 want, that don't really fit in any widely distributed mod.
 
 This mod was not made with the intention of other people using it, and its existence
@@ -21,6 +21,12 @@ you are welcome to download and use the mod yourself.
 Currently, there exists a 1.8.9 Forge version and a 1.20.6 Fabric version. The same
 features should exist in both version unless some limitation arises that causes a
 feature to not be worth implementing in one of the versions.
+
+> The mod is considered early development and features will be added as and when I want to add something
+
+[^1]: Currently there are no Skyblock specific features, but since there possibly may be some Skyblock 
+features in the future (as I only really play Hypixel Skyblock), and because of the mod name, I will
+still refer to it as a 'skyblock' mod.
 
 ## Requirements
 
