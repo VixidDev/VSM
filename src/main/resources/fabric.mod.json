@@ -14,11 +14,11 @@
 	"icon": "assets/vsm/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"dev.vixid.vsm.VSM::onInitialise"
-		],
 		"client": [
-			"dev.vixid.vsm.VSM::onInitialiseClient"
+			{
+				"value": "dev.vixid.vsm.VSM",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [
