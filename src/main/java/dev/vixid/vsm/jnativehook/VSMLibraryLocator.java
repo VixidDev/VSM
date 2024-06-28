@@ -7,15 +7,18 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
+/**
+ * JNativeHook library locator in the case that JNativeHook cannot find the jar otherwise
+ */
 public class VSMLibraryLocator implements NativeLibraryLocator {
     private static final Logger log = Logger.getLogger(GlobalScreen.class.getPackage().getName());
+    public static final String tempDirName = "VSM-JNativeHookLib";
 
     @Override
     public Iterator<File> getLibraries() {
@@ -38,7 +41,6 @@ public class VSMLibraryLocator implements NativeLibraryLocator {
 
         File libFile;
         // https://stackoverflow.com/questions/1611357/how-to-make-a-jar-file-that-includes-dll-files
-        String tempDirName = "VSM_" + new Date().getTime();
         try {
             InputStream is = GlobalScreen.class.getResourceAsStream(libResourcePath);
             libFile = new File(System.getProperty("java.io.tmpdir") + "/" + tempDirName + libResourcePath);
