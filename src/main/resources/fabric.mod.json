@@ -8,7 +8,7 @@
 		"Vixid"
 	],
 	"contact": {
-		"sources": "https://github.com/VixidDev/VSM"
+		"sources": "https://github.com/VixidDev/VSM/tree/1.20.6"
 	},
 	"license": "GPL-3.0",
 	"icon": "assets/vsm/icon.png",
