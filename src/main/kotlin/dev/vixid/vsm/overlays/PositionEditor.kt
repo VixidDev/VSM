@@ -61,7 +61,7 @@ class PositionEditor(private val editorOverlays: MutableMap<UUID, Pair<String, P
     }
 
     override fun onGuiClosed() {
-        VSM.config.saveNow()
+        VSM.config.instance.saveNow()
     }
 
     override fun doesGuiPauseGame(): Boolean {

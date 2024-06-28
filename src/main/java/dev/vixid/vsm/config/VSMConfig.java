@@ -1,6 +1,7 @@
 package dev.vixid.vsm.config;
 
 import com.google.gson.annotations.Expose;
+import dev.vixid.vsm.VSM;
 import dev.vixid.vsm.config.features.SpotifyConfig;
 import io.github.notenoughupdates.moulconfig.Config;
 import io.github.notenoughupdates.moulconfig.Social;
@@ -15,7 +16,7 @@ public class VSMConfig extends Config {
     @Override
     public List<Social> getSocials() {
         return Collections.singletonList(
-                Social.forLink("GitHub", GITHUB, "https://github.com/VixidDev")
+                Social.forLink("GitHub", GITHUB, "https://github.com/VixidDev/VSM")
         );
     }
 
@@ -26,7 +27,7 @@ public class VSMConfig extends Config {
 
     @Override
     public void saveNow() {
-        ConfigManager.INSTANCE.saveConfig();
+        VSM.getConfig().saveToFile();
     }
 
     @Expose

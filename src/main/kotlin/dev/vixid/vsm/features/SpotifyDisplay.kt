@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent
 
 object SpotifyDisplay : Overlay() {
 
-    private val config: SpotifyConfig get() = VSM.config.spotifyConfig
+    private val config: SpotifyConfig get() = VSM.config.instance.spotifyConfig
 
     private var songName: String = "§cCannot detect song name!"
     private var totalTicks = 0

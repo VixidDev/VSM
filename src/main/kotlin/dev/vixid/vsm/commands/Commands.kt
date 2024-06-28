@@ -1,13 +1,13 @@
 package dev.vixid.vsm.commands
 
-import dev.vixid.vsm.config.ConfigGuiManager
+import dev.vixid.vsm.VSM
 import net.minecraft.command.ICommandSender
 import net.minecraftforge.client.ClientCommandHandler
 
 object Commands {
 
     fun initCommands() {
-        registerCommand("vsm") { ConfigGuiManager.openConfig() }
+        registerCommand("vsm") { VSM.screenToOpen = VSM.config.getGui() }
     }
 
     private fun registerCommand(name: String, function: (Array<String>) -> Unit) {

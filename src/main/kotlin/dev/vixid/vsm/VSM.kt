@@ -2,11 +2,13 @@ package dev.vixid.vsm
 
 import com.github.kwhat.jnativehook.GlobalScreen
 import dev.vixid.vsm.commands.Commands
-import dev.vixid.vsm.config.ConfigManager
 import dev.vixid.vsm.config.VSMConfig
+import dev.vixid.vsm.config.core.VSMGsonMapper
 import dev.vixid.vsm.features.SpotifyDisplay
 import dev.vixid.vsm.jnativehook.VSMLibraryLocator
 import dev.vixid.vsm.overlays.OverlayPositions
+import io.github.notenoughupdates.moulconfig.managed.ManagedConfig
+import java.io.File
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -30,8 +32,6 @@ class VSM {
 
     @Mod.EventHandler
     fun init(event: FMLInitializationEvent) {
-        ConfigManager.firstLoad()
-
         MinecraftForge.EVENT_BUS.register(this)
 
         SpotifyDisplay.initialise()
@@ -56,7 +56,9 @@ class VSM {
 
     companion object {
         @JvmStatic
-        val config: VSMConfig get() = ConfigManager.config
+        val config = ManagedConfig.create(File("config/vsm/config.json"), VSMConfig::class.java) {
+            mapper = VSMGsonMapper(this.clazz)
+        }
 
         private val globalJob: Job = Job(null)
         val coroutineScope = CoroutineScope(CoroutineName("VSM") + SupervisorJob(globalJob))
