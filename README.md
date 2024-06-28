@@ -22,6 +22,8 @@ Currently, there exists a 1.8.9 Forge version and a 1.20.6 Fabric version. The s
 features should exist in both version unless some limitation arises that causes a
 feature to not be worth implementing in one of the versions.
 
+> The mod is considered early development and features will be added as and when I want to add something
+
 [^1]: Currently there are no Skyblock specific features, but since there possibly may be some Skyblock 
 features in the future (as I only really play Hypixel Skyblock), and because of the mod name, I will
 still refer to it as a 'skyblock' mod.
