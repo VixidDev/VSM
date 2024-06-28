@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.DrawContext
+import net.minecraft.client.gui.screen.ChatScreen
 import net.minecraft.client.util.InputUtil
 
 object SpotifyDisplay : Overlay() {
@@ -48,6 +49,7 @@ object SpotifyDisplay : Overlay() {
     }
 
     private fun onKeyPress(key: Int, scancode: Int, action: Int, modifiers: Int) {
+        if (MinecraftClient.getInstance().currentScreen is ChatScreen) return
         val translationKey = InputUtil.fromKeyCode(key, 0).translationKey
         onPress(translationKey)
     }
