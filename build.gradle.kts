@@ -121,6 +121,7 @@ tasks.shadowJar {
             println("Copying jars into mod: ${it.files}")
         }
     }
+    from("LICENSE")
 
     exclude("META-INF/versions/**")
 
