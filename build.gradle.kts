@@ -89,4 +89,5 @@ tasks.processResources {
 	filesMatching("fabric.mod.json") {
 		expand(inputs.properties)
 	}
+	from("LICENSE")
 }
