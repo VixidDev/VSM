@@ -3,7 +3,7 @@
 	"id": "vsm",
 	"version": "${version}",
 	"name": "Vixid's Skyblock Mod",
-	"description": "Vixid's Minecraft mod with various QOL features",
+	"description": "Vixid's Skyblock Minecraft mod with various QOL features",
 	"authors": [
 		"Vixid"
 	],
