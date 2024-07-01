@@ -37,6 +37,6 @@ Works by reading the window title of the Spotify desktop client
 * Shows the current song artist and title in game
 * Can control the song using keybinds set in the config
 * Posts a chat message whenever a song changes
-> Currently uses powershell commands to query the window title so this will only work
-on Windows devices
+> Only the Windows JNA method for getting the window title is implemented at the moment, this feature
+> will not work with other platforms yet.
 </details>

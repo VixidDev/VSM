@@ -49,10 +49,6 @@ dependencies {
     }
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT")
 
-    shadowImpl("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3") {
-        exclude(group = "org.jetbrains.kotlin")
-    }
-
     runtimeOnly("me.djtheredstoner:DevAuth-forge-legacy:1.1.2")
     shadowModImpl("org.notenoughupdates.moulconfig:legacy:3.0.0-beta.7")
 
