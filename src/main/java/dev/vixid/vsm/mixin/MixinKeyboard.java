@@ -1,7 +1,7 @@
 package dev.vixid.vsm.mixin;
 
 import dev.vixid.vsm.events.KeyPress;
-import dev.vixid.vsm.spotify.ControlUtils;
+import dev.vixid.vsm.features.spotify.ControlUtils;
 import net.minecraft.client.Keyboard;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

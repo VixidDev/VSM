@@ -1,4 +1,4 @@
-package dev.vixid.vsm.spotify
+package dev.vixid.vsm.features.spotify
 
 import com.github.kwhat.jnativehook.GlobalScreen
 import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent

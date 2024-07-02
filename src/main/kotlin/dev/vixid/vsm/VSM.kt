@@ -6,13 +6,9 @@ import dev.vixid.vsm.config.core.VSMGsonMapper
 import dev.vixid.vsm.config.core.annotations.ConfigEditorKeybind
 import dev.vixid.vsm.config.core.gui.GuiOptionEditorKeybind
 import dev.vixid.vsm.overlays.OverlayPositions
-import dev.vixid.vsm.spotify.SpotifyDisplay
+import dev.vixid.vsm.features.spotify.SpotifyDisplay
 import io.github.notenoughupdates.moulconfig.managed.ManagedConfig
 import java.io.File
-import kotlinx.coroutines.CoroutineName
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.SupervisorJob
 import net.fabricmc.api.ClientModInitializer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -30,9 +26,6 @@ object VSM : ClientModInitializer {
 			GuiOptionEditorKeybind(processedOption, keybind.defaultKey)
 		}
 	}
-
-	private val globalJob = Job()
-	val coroutineScope = CoroutineScope(CoroutineName("VSM") + SupervisorJob(globalJob))
 
 	override fun onInitializeClient() {
 		GlobalScreen.registerNativeHook()
