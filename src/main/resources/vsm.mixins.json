@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "dev.vixid.vsm.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "transformers.MixinManagedConfig",
+    "transformers.MixinKeyboard",
+    "transformers.MixinMouse"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
