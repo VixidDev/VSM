@@ -10,8 +10,7 @@
     </a>
 </div>
 
-VSM is a personal Skyblock[^1] Minecraft mod of mine with the purpose of adding some QOL features that I
-want.
+VSM is a personal Skyblock Minecraft mod of mine with the purpose of adding some QOL features that I want.
 
 Currently, there exists a 1.8.9 Forge version and a 1.20.6 and 1.21.5 Fabric version. The 1.8.9 and 1.20.6 versions are no longer worked on and only the 1.21.5 verison is being actively developed, although there exists a download in the releases page for the last released versions of the 1.8.9 and 1.20.6 jar.
 
