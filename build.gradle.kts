@@ -38,7 +38,9 @@ dependencies {
 	modImplementation("net.fabricmc:fabric-language-kotlin:${rootProject.property("fabric_kotlin_version")}")
 
 	shadowModImpl("org.notenoughupdates.moulconfig:modern-1.21.5:3.11.0")
-	shadowModImpl("com.github.kwhat:jnativehook:2.2.2")
+
+	implementation("com.github.kwhat:jnativehook:2.2.2")
+	include("com.github.kwhat:jnativehook:2.2.2")
 }
 
 tasks.processResources {
